@@ -1,0 +1,10 @@
+<app-header></app-header>
+<app-add-task (addTaskEmt)="addTask($event)"></app-add-task>
+<div class="tasks">
+  <app-task-item
+    *ngFor="let item of tasks"
+    [task]="item"
+    (onDelete)="deleteTask($event)"
+    (toggleReminderEmt)="toggleReminder($event)"
+  ></app-task-item>
+</div>

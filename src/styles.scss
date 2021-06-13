@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.form {
+  width: 80%;
+  margin-inline: auto;
+  margin-top: 1rem;
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    & label {
+      font-weight: bold;
+    }
+  }
+
+  .input-group input {
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 5px;
+  }
+
+  .input-group.checkbox {
+    flex-direction: row;
+    align-items: center;
+
+    label {
+      margin-right: 6rem;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+  &--large {
+    padding: 1rem;
+  }
+  &--transparent {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      background-color: darken($color: #fff, $amount: 20);
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Style error input fiels
+input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.label-error {
+  color: red;
+}

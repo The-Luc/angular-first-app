@@ -1,0 +1,23 @@
+<div class="posts">
+  <h1>POSTS from API</h1>
+  <p>CRUD implementation using Http module</p>
+  <form class="form">
+    <input
+      class="add-input"
+      #addInput
+      (keyup.enter)="createPost(addInput)"
+      type="text"
+    />
+    <button class="add-button">ADD</button>
+  </form>
+  <ul class="post-list">
+    <li *ngFor="let post of posts">
+      <a [routerLink]="['/posts', post.id]" class="post-item">
+        <span class="post-number">{{ post.id }}</span>
+        <span class="post-title">
+          {{ post.title | titlecase }}
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>

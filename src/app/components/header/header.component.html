@@ -1,0 +1,8 @@
+<header class="header">
+  <h1 style="font-size: 220%">{{ title }}</h1>
+  <app-button
+    color="{{ showAddTask ? 'red' : 'green' }}"
+    text="{{ showAddTask ? 'CLOSE' : 'ADD' }}"
+    (btnClick)="toggleAddTask()"
+  ></app-button>
+</header>

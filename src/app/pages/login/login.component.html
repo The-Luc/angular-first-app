@@ -1,0 +1,39 @@
+<h1>Login</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+  <div class="input-group">
+    <label for="username">Username</label>
+    <input
+      formControlName="username"
+      type="text"
+      id="username"
+      name="username"
+    />
+    <div *ngIf="username?.touched && username?.invalid" class="label-error">
+      This field is required
+    </div>
+  </div>
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input
+      formControlName="password"
+      type="password"
+      id="password"
+      name="password"
+    />
+    <div *ngIf="password?.touched && password?.invalid" class="label-error">
+      <div *ngIf="password?.errors?.required">This field is required</div>
+      <div *ngIf="password?.errors?.minlength">
+        Min length is {{ password?.errors }}
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <input [disabled]="form.invalid" type="submit" value="Submit" class="btn" />
+    <input type="button" value="Register" class="btn btn--transparent" />
+  </div>
+  <p style="margin: 1rem auto 0">
+    ----------- For debug: Field values -----------
+  </p>
+  <p>{{ form.value | json }}</p>
+</form>
